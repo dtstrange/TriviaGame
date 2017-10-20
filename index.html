@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dark Knight Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script type="text/javascript" src="./assets/javascript/app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">Dark Knight Trivia Game</h1>
+        </div>
+        <!-- end jumbrotron div -->
+        <div id="beginRow" class="row">
+            <div class="col-md-12 col-centered">
+                <img id="begin" src="./assets/images/begin.png">
+            </div>
+        </div>
+
+        <div  class="row">
+            <div id="game" class="col-md-6 col-centered">
+                
+
+                <form name="quiz1" id="quiz1">
+                    <br>
+                    <br>
+                    <br>
+                    <p>What is Batman's secret identity?</p>
+                    <input type="radio" name="Q1" value="Bruce Willis"> Bruce Willis
+                    <input type="radio" name="Q1" value="Bruce Banner"> Bruce Banner
+                    <input type="radio" name="Q1" value="Bruce Wayne"> Bruce Wayne
+                    <input type="radio" name="Q1" value="Marlon Wayans"> Marlon Wayans
+                    <br>
+                    <br>
+                    <br>
+                    <p>What is the name of Batman's butler?</p>
+                    <input type="radio" name="Q2" value="Alfred Pennyworth"> Alfred Pennyworth
+                    <input type="radio" name="Q2" value="Lynn Belvedere"> Lynn Belvedere
+                    <input type="radio" name="Q2" value="Geoffrey Butler"> Geoffrey Butler
+                    <input type="radio" name="Q2" value="Marlon Wayans"> Alfred Hitchcock
+                    <br>
+                    <br>
+                    <br>
+                    <P>Who taught Batman to be an escape artist?</P>
+                    <input type="radio" name="Q3" value="Harry Houdini"> Harry Houdini
+                    <input type="radio" name="Q3" value="The Great Zatara"> The Great Zatara
+                    <input type="radio" name="Q3" value="Chris Angel"> Chris Angel
+                    <input type="radio" name="Q3" value="David Blaine"> David Blaine
+                    <br>
+                    <br>
+                    <br>
+                    <p>In what city does does Batman primarily operate?</p>
+                    <input type="radio" name="Q4" value="Gotham"> Gotham
+                    <input type="radio" name="Q4" value="Metropolis"> Metropolis
+                    <input type="radio" name="Q4" value="Star City"> Star City
+                    <input type="radio" name="Q4" value="Central City"> Central City
+                    <br>
+                    <br>
+                    <br>
+                    <p>Who is the mother of Damian Wayne</p>
+                    <input type="radio" name="Q5" value="Selena Kyle"> Selena Kyle
+                    <input type="radio" name="Q5" value="Talia Al'ghul"> Talia Al'ghul
+                    <input type="radio" name="Q5" value="Zatanna Zatara"> Zatanna Zatara
+                    <input type="radio" name="Q5" value="Diana Prince"> Diana Prince
+                    <br>
+                    <br>
+                    <br>
+                    <p>Who was the first Robin?</p>
+                    <input type="radio" name="Q6" value="Damian Wayne"> Damian Wayne
+                    <input type="radio" name="Q6" value='Richard "Dick" Grayson'> Richard "Dick" Grayson
+                    <input type="radio" name="Q6" value="Jason Todd"> Jason Todd
+                    <input type="radio" name="Q6" value="Tim Drake"> Tim Drake
+                    <br>
+                    <br>
+                    <br>
+                    <p>Which villian was given a backstory in Batman The Animated Series?</p>
+                    <input type="radio" name="Q7" value="The Joker"> The Joker
+                    <input type="radio" name="Q7" value="Victor Zsasz"> Victor Zsasz
+                    <input type="radio" name="Q7" value="Mr. Freeze"> Mr. Freeze
+                    <input type="radio" name="Q7" value="Decan Blackfire"> Decan Blackfire
+                    <br>
+                    <br>
+                    <br>
+                    <p>What character was introduced in Batman The Animated Series?</p>
+                    <input type="radio" name="Q8" value="Firefly"> Firefly
+                    <input type="radio" name="Q8" value="Tim Drake"> Tim Drake
+                    <input type="radio" name="Q8" value="Scarface/Ventriloquist"> Scarface/Ventriloquist
+                    <input type="radio" name="Q8" value="Harley Quinn"> Harley Quinn
+                    <br>
+                    <br>
+                    <br>
+                    <p>Which character has not been Batgirl?</p>
+                    <input type="radio" name="Q9" value="Barbara Gordon"> Barbara Gordon
+                    <input type="radio" name="Q9" value="Casandra Cain"> Casandra Cain
+                    <input type="radio" name="Q9" value="Stephanie Brown"> Stephanie Brown
+                    <input type="radio" name="Q9" value="Kathy Kane"> Kathy Kane
+                    <br>
+                    <br>
+                    <br>
+                    <p>Which charcter has Batman not had a romantic relationship with?</p>
+                    <input type="radio" name="Q10" value="Barbara Gordon"> Barbara Gordon
+                    <input type="radio" name="Q10" value="Casandra Cain"> Casandra Cain
+                    <input type="radio" name="Q10" value="Diana Prince"> Diana Prince
+                    <input type="radio" name="Q10" value="Selena Kyle"> Selena Kyle
+                    <br>
+                    <br>
+                    <br>
+                    <input id="submit" type="submit">
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+        <!-- end row div -->
+    </div>
+    <!-- end container div -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
