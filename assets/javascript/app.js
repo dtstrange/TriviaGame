@@ -14,13 +14,16 @@ window.onload = function() {
     $("#begin").on("click", function() {
         $("#beginRow").css("display", "none")
         $("#game").css("display", "block")
-        
+         function countDown(){
+            setInterval(check(){}, 90000);
+        }
+        countDown()
     });
 
     //make for loop with if else quesions
     function check(e) {
         
-        var radios = $(this).find("input:radio").each(...)
+        var radios = document.getElementById('quiz1')
         for (var i = 1; i < typeof(radios["Q" + i]) !== "undefined"; i++) {
             for (var j = 0; j < radios["Q" + i].length; j++) {
                 if (radios["Q" + i][j].checked === quiz.answers[j]) {
@@ -55,6 +58,8 @@ window.onload = function() {
     $("#submit").on("click", function(event){
         event.preventDefault()
         check()
-
+        function clearTimer(){
+            clearInterval(countDown);
+        }
     });
 };
