@@ -6,7 +6,7 @@ window.onload = function() {
         wrongSelect: 0,
         unanswered: 10,
         answers: ["Bruce Wayne", "Alfred Pennyworth", "The Great Zatara", "Gotham", "Talia Al'ghul", 'Richard "Dick" Grayson', "Mr. Freeze", "Harley Quinn", "Kathy Kane", "Casandra Cain"],
-        // questions: ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]
+        userSelect: []
 
     };
     //set onclick to trigger interval, hide start button, show quiz
@@ -14,27 +14,30 @@ window.onload = function() {
     $("#begin").on("click", function() {
         $("#beginRow").css("display", "none")
         $("#game").css("display", "block")
-         function countDown(){
-            setInterval(check(){}, 90000);
+
+        function countDown() {
+            setInterval(function(){
+                check()
+            }, 90000);
         }
         countDown()
     });
 
     //make for loop with if else quesions
     function check(e) {
-        
         var radios = document.getElementById('quiz1')
-        for (var i = 1; i < typeof(radios["Q" + i]) !== "undefined"; i++) {
-            for (var j = 0; j < radios["Q" + i].length; j++) {
-                if (radios["Q" + i][j].checked === quiz.answers[j]) {
-                    quiz.correctSelect++
+        for (var i = 0; i < quiz.answers.length; i++) {
+            console.log(selected)
+            var selected = $("input[name='Q" + (i + 1) + "']:checked").val();
+            if (selected === quiz.answers[i]) {
+                console.log("correct")
+                quiz.correctSelect++
                     quiz.unanswered--
-                } else if (radios["Q" + i][j].checked !== quiz.answers[j]) {
-                    quiz.wrongSelect++
-                    quiz.unanswered--
-                }
+            } else if (selected !== quiz.answers[i] && selected !== undefined) {
+                console.log("incorrect");
+                quiz.wrongSelect++;
+                quiz.unanswered--;
             }
-
         }
         result()
     };
@@ -48,18 +51,20 @@ window.onload = function() {
         newDiv.attr("id", "results");
         
 
-        $("#results").append("<p>Correct Answeres: " + correctSelect + "</p>");
-        $("#results").append("<p>Wrong Answeres: " + wrongSelect + "</p>");
-        $("#results").append("<p>Unanswered Questions: " + unanswered + "</p>");
+        newDiv.append("<p>Correct Answeres: " + quiz.correctSelect + "</p>");
+        newDiv.append("<p>Wrong Answeres: " + quiz.wrongSelect + "</p>");
+        newDiv.append("<p>Unanswered Questions: " + quiz.unanswered + "</p>");
 
-        $("#container").append("#results");
+        $("#main").append(newDiv);
+        $("#main").css("text-align", "center")
     };
     //set onclick for submit to activate time out function
-    $("#submit").on("click", function(event){
+    $("#submit").on("click", function(event) {
         event.preventDefault()
-        check()
+
         function clearTimer(){
-            clearInterval(countDown);
+        clearInterval(countDown)
+        check();
         }
     });
 };
