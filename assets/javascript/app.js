@@ -7,6 +7,7 @@ window.onload = function() {
         unanswered: 10,
         answers: ["Bruce Wayne", "Alfred Pennyworth", "The Great Zatara", "Gotham", "Talia Al'ghul", 'Richard "Dick" Grayson', "Mr. Freeze", "Harley Quinn", "Kathy Kane", "Casandra Cain"],
         userSelect: []
+        
 
     };
     //set onclick to trigger interval, hide start button, show quiz
@@ -14,13 +15,19 @@ window.onload = function() {
     $("#begin").on("click", function() {
         $("#beginRow").css("display", "none")
         $("#game").css("display", "block")
+        $("#timer").css("display", "block")
 
         function countDown() {
-            setInterval(function(){
+            setInterval(function() {
                 check()
             }, 90000);
         }
         countDown()
+
+        //var displayTime = countDown()
+
+        $("#timer").text(timeConverter(countDown()))
+
     });
 
     //make for loop with if else quesions
@@ -39,6 +46,11 @@ window.onload = function() {
                 quiz.unanswered--;
             }
         }
+
+        function clearTimer() {
+            clearInterval(countDown)
+        }
+        clearTimer()
         result()
     };
 
@@ -46,10 +58,11 @@ window.onload = function() {
     //function to trigger when time runs out
     function result() {
         $("#game").css("display", "none");
+        $("#timer").css("display", "none");
         var newDiv = $('<div>');
         newDiv.css("background-color", "grey");
         newDiv.attr("id", "results");
-        
+
 
         newDiv.append("<p>Correct Answeres: " + quiz.correctSelect + "</p>");
         newDiv.append("<p>Wrong Answeres: " + quiz.wrongSelect + "</p>");
@@ -61,10 +74,29 @@ window.onload = function() {
     //set onclick for submit to activate time out function
     $("#submit").on("click", function(event) {
         event.preventDefault()
-
-        function clearTimer(){
-        clearInterval(countDown)
         check();
-        }
+        
     });
+
+    var timeConverter = function(t) {
+
+        //  Takes the current time in seconds and convert it to minutes and seconds (mm:ss).
+        var minutes = Math.floor(t / 60);
+        var seconds = t - (minutes * 60);
+
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+
+        if (minutes === 0) {
+            minutes = "00";
+        } else if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        return minutes + ":" + seconds;
+    };
+
+    
+
 };

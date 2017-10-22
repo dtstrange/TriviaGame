@@ -24,3 +24,9 @@ float: none;
 margin: 0 auto;
 }
 
+#timer{
+	text-align: center;
+	background-color: grey;
+	display: none;
+
+}
