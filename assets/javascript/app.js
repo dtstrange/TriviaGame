@@ -6,7 +6,7 @@ window.onload = function() {
         wrongSelect: 0,
         unanswered: 10,
         answers: ["Bruce Wayne", "Alfred Pennyworth", "The Great Zatara", "Gotham", "Talia Al'ghul", 'Richard "Dick" Grayson', "Mr. Freeze", "Harley Quinn", "Kathy Kane", "Casandra Cain"],
-        userSelect: []
+        
         
 
     };
@@ -46,11 +46,10 @@ window.onload = function() {
                 quiz.unanswered--;
             }
         }
-
-        function clearTimer() {
-            clearInterval(countDown)
+        function clearTimer(){
+            clearInterval(countDown())
         }
-        clearTimer()
+        
         result()
     };
 
@@ -74,6 +73,7 @@ window.onload = function() {
     //set onclick for submit to activate time out function
     $("#submit").on("click", function(event) {
         event.preventDefault()
+        
         check();
         
     });
